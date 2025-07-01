@@ -46,7 +46,7 @@ export default function LandingPage() {
   return (
     <>
       {/* Navigation Component */}
-      <LandingNavbar/>
+      <LandingNavbar />
 
       {/* Main Landing Page Content */}
       <div className="min-h-screen bg-gradient-to-br from-purple-50 via-pink-50 to-purple-100">
@@ -88,28 +88,35 @@ export default function LandingPage() {
             </motion.p>
 
             {/* Search Bar */}
-            <motion.div variants={itemVariants} className="max-w-2xl mx-auto mb-12">
+            <motion.div variants={itemVariants} className="mx-4 sm:mx-auto max-w-full sm:max-w-2xl mb-8 sm:mb-12">
               <div className="relative">
                 <motion.div
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                  className="flex items-center bg-white rounded-2xl shadow-xl border border-purple-200 p-2"
+                  whileHover={{ scale: 1.01 }}
+                  whileTap={{ scale: 0.97 }}
+                  className="bg-[#F1F5F9] rounded-2xl shadow-md border border-slate-300 p-4 flex flex-col md:flex-row items-stretch md:items-center gap-4"
                 >
-                  <Search className="w-6 h-6 text-gray-400 ml-4" />
-                  <input
-                    type="text"
-                    placeholder="Search for opportunities, projects, or skills..."
-                    value={searchQuery}
-                    onChange={(e) => setSearchQuery(e.target.value)}
-                    className="flex-1 border-0 focus:outline-none text-lg px-4 bg-transparent"
-                  />
-                  <button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 rounded-xl px-4 sm:px-6 md:px-8 py-2 text-white flex items-center transition-all duration-300 text-sm sm:text-base">
-                    <span className="hidden sm:inline">Search</span>
-                    <Search className="w-4 h-4 sm:hidden" />
+                  {/* Icon + Input */}
+                  <div className="flex items-center gap-3 w-full">
+                    <Search className="w-6 h-6 text-slate-400" />
+                    <input
+                      type="text"
+                      placeholder="Search for developers, projects, or skills..."
+                      value={searchQuery}
+                      onChange={(e) => setSearchQuery(e.target.value)}
+                      className="w-full border-0 bg-transparent focus:outline-none focus:ring-0 text-base md:text-lg placeholder:text-slate-400 text-[#1E1E2F]"
+                    />
+                  </div>
+
+                  {/* Button */}
+                  <button className="w-full md:w-auto bg-gradient-to-r from-purple-600 to-pink-6 hover:opacity-90 rounded-xl px-6 py-2 text-white flex items-center justify-center">
+                    Search
+                    <ArrowRight className="w-5 h-5 ml-2" />
                   </button>
                 </motion.div>
               </div>
             </motion.div>
+
+
 
             {/* Call to Action Buttons */}
             <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-4 justify-center items-center">
